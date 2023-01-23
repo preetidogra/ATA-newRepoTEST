@@ -9,7 +9,7 @@ pipeline{
         branches: [[name: '*/main']],
         extensions: [[$class: 'CloneOption', timeout: 120]],
         gitTool: 'Default', 
-        userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
+        userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-newRepoTEST']]
     ])
            	checkout scm
         }
@@ -21,7 +21,7 @@ pipeline{
        		branches: [[name: '*/main']],
         	extensions: [[$class: 'CloneOption', timeout: 120]],
         	gitTool: 'Default', 
-        	userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
+        	userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-newRepoTEST']]
     		])
 		withMaven(maven: 'maven_3_8_4') {
                     sh 'mvn clean install'
@@ -34,7 +34,7 @@ pipeline{
         	branches: [[name: '*/main']],
        		extensions: [[$class: 'CloneOption', timeout: 120]],
         	gitTool: 'Default', 
-        	userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
+        	userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-newRepoTEST']]
    		 ])
 		withMaven(maven: 'maven_3_8_4'){
 		sh'mvn test'}}}
@@ -46,7 +46,7 @@ pipeline{
         	branches: [[name: '*/main']],
         	extensions: [[$class: 'CloneOption', timeout: 120]],
         	gitTool: 'Default', 
-        	userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
+        	userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-newRepoTEST']]
 			 ]) 
 		cucumber buildStatus: "UNSTABLE",
 		fileIncludePattern: "**/cucumber.json",
